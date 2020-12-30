@@ -82,12 +82,8 @@ def move(position, maze, missing_spaces):
     while True:
         action = getch().upper()
 
-        if is_valid(action):
+        if action in VALID_ACTIONS:
             return execute_action(action, position, maze, missing_spaces)
-
-
-def is_valid(action):
-    return action in VALID_ACTIONS
 
 
 def execute_action(action, position, maze, missing_spaces):
