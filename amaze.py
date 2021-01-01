@@ -1,10 +1,9 @@
 import os
-import signal
 import sys
 from itertools import chain
 
 
-WALLS = ['#', '|']
+WALL = '#'
 SPACE = ' '
 PASSED = '.'
 PLAYER = '@'
@@ -108,7 +107,7 @@ def can_move(x, y, maze):
     if x < 0 or y < 0 or x > len(maze) or y > len(maze[x]):
         return False
 
-    return not maze[x][y] in WALLS
+    return maze[x][y] != WALL
 
 
 def go_up(position, maze, missing_spaces):
